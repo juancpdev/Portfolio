@@ -1,13 +1,14 @@
 // Fuentes
-$fuente_principal: 'Raleway', sans-serif;
+$fuente_principal: 'Poppins', sans-serif;
 
 // Tamaño de Media Queries
 $telefono: 480px;
 $tablet: 768px;
 $tabletXL: 900px;
 $desktop: 1024px;
+$desktopXL: 1260px;
 
-// Colores
+// Colores principales
 $negro: #000000;
 $amarillo: #E08709;;
 $verde: #71B100;
@@ -16,7 +17,10 @@ $gris: #e1e1e1;
 $grisOscuro: #333333;
 $rojo: red;
 $azul: blue;
+
+// Colores Proyecto
 $principal: #1DF1EF;
+$secundario: #094746;
 
 $separacion: 5rem;
 
@@ -25,4 +29,3 @@ $delgada: 300;
 $regular : 400;
 $bold: 700;
 $black: 900;
-
