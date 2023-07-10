@@ -1,13 +1,18 @@
 header {
-    background-color: #094746;
+    background-color: $secundario;
     height: 8rem;
     border-bottom: .1rem solid #0c5e5c;
+
    .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    padding: 1rem 3rem;
+    padding: 0 2rem;
+        @include desktopXL {
+            padding: 0;
+        }
+        
         .logo {
             width: 17rem;
             min-width: 15rem;

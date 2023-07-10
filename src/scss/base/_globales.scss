@@ -1,7 +1,6 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAH0lEQVQIW2NgYODjBWJWKOZgQOKwQDAKByLAgSTACQAp6QE8mK8aTgAAAABJRU5ErkJggg==);
 }
 *, *:before, *:after {
     box-sizing: inherit;
@@ -10,15 +9,24 @@ body {
     font-family: $fuente_principal;
     font-size: 1.6rem;
     line-height: 1.8;
+    
 }
 p {
     color: $negro;
     font-size: 2rem;
 }
+
 .contenedor {
     width: 95%;
     max-width: 120rem;
     margin: 0 auto;
+    @include tabletXL {
+        max-width: 100rem;
+    }
+}
+
+.bg-custom {
+    background-image: url(/build/img/punto.webp);
 }
 
 a {

@@ -22,6 +22,13 @@
         @content;
     }
 }
+
+@mixin desktopXL {
+    @media (min-width: #{$desktopXL}) {
+        @content;
+    }
+}
+
 @mixin grid($columnas, $espaciado ) {
     display: grid;
     gap: $espaciado;
@@ -34,9 +41,8 @@
     font-weight: $bold;
     color: $blanco;
     text-align: center;
-    padding: 1rem 3rem;
+    padding: 1rem 0;
     margin-top: 2rem;
-    border: none;
     cursor: pointer;
     &:hover {
         background-color: darken($bgColor, 5);

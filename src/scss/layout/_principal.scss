@@ -1,18 +1,21 @@
-.section-principal {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAH0lEQVQIW2NgYODjBWJWKOZgQOKwQDAKByLAgSTACQAp6QE8mK8aTgAAAABJRU5ErkJggg==);
-    background-color: #063f3e;
-    height: calc(100vh - 8rem);
-    padding: 0 2rem;
+.contenedor-section-principal {
+    background-color: darken($secundario, 2);
+    height: 80vh;
+}
 
+.section-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 0 1rem;
     .texto-presentacion {
         display: flex;
         flex-direction: column;
         align-items: start;
-        padding-top: 5rem;
-        width: 85%;
 
         .saludo {
-            color: white;
+            color: $blanco;
             font-size: 1.5rem;
             font-weight: 200;
             img {
@@ -20,6 +23,9 @@
                 width: 2rem;
             }
             @include telefono {
+                font-size: 1.7rem;
+            }
+            @include tablet {
                 font-size: 2rem;
             }
         }
@@ -27,19 +33,23 @@
             font-weight: 800;
             line-height: 1;
             margin: 1rem 0;
-            font-size: 3rem;
+            font-size: 2.5rem;
             @include telefono {
                 font-size: 3.5rem;
             }
         }
         .descripcion {
-            color: white;
+            color: $blanco;
             font-weight: 500;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 200;
             @include telefono {
-                font-size: 2rem;
+                font-size: 1.7rem;
             }
+        }
+
+        @include tablet {
+            width: 60rem;
         }
     }
 
@@ -51,7 +61,7 @@
         }
         i {
             font-size: 2rem;
-            color: white;
+            color: $blanco;
             cursor: pointer;
             transition: transform 0.5s ease-in-out, scale 0.5s ease-in-out;
         }
@@ -62,4 +72,38 @@
     }
 }
 
+.contenedor-botones {
+    .boton {
+        width: 9rem;
+        font-size: 1rem;
+        border: .1rem  solid #0E9492;
+        border-radius: 1rem;
+        @include telefono {
+            width: 15rem;
+            font-size: 1.3rem;
+        }
+        @include tablet {
+            width: 20rem;
+            font-size: 1.4rem;
+        }
+    }
 
+    .cv {
+        @include boton(#0E9492);
+        margin-right: 1rem;
+        transition: box-shadow .2s ease-in;
+        &:hover {
+            box-shadow: 0 0 .7rem .1rem #0e949262 ;
+        }
+    }
+
+    .recursos {
+        @include boton(rgba(0, 0, 0, 0));
+        &:hover {
+            color: $principal;
+            box-shadow: 0 0 .7rem .1rem #0e949248;
+        }
+    }
+    
+
+}

@@ -1,0 +1,51 @@
+.contenedor-section-aptitudes {
+    background-color: darken($principal, 15);
+    width: 100%;
+
+    .contenedor-aptitudes {
+        padding: 5rem 0;
+        ul {
+            @include grid(1, 4rem);
+            padding: 0 2rem;
+            margin: 0;
+            @include telefono {
+                @include grid(2, 4rem)
+            }
+            @include tablet {
+                @include grid(4, 4rem)
+            }
+        }
+    }
+
+    .aptitud {
+        @include tablet {
+            padding-bottom: 0;
+        }
+    }
+    .contenedor-arriba {
+        display: flex;
+        font-weight: 900;
+        .contenedor-icono {
+            color: $blanco;
+            margin-right: 1rem;
+            border-radius: 1rem;
+            background-color: darken($principal, 25);
+            width: 4rem;
+            height: 4rem;
+            i {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        p {
+            font-weight: 700;
+        }
+    }
+    .aptitud-descripcion {
+        padding-top: 1rem;
+        font-weight: 100;
+        font-size: 1.3rem;
+    }
+}
