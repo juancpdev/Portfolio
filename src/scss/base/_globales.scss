@@ -71,5 +71,6 @@ ul {
 .gradiente-letras {
     background-image: linear-gradient(90deg ,#1DF1EF, #EF1DF1);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
