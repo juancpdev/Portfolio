@@ -20,8 +20,8 @@
                         align-items: center;
                         padding-bottom: 1.5rem;
                         figure {
-                            width: 8rem;
-                            height: 8rem;
+                            min-width: 8rem;
+                            max-width: 8rem;
                             margin: 0;
                             position: relative;
                             border-radius: 100%;
@@ -110,67 +110,84 @@
                                 margin-right: 1rem;
                             }
                         }
-                        .experiencia-descripcion {
-                            padding-top: 2rem;
-                            padding-bottom: 2rem;
-                            .descripcion-titulo {
-                                display: flex;
-                                align-items: center;
-                                margin: 1rem 0;
-                                i {
-                                    padding-right: 1rem;
-                                }
-                                h6 {
-                                    text-transform: uppercase;
-                                    margin: 0;
-                                }
-                            }
-                            ul {
-                                li {
-                                    position: relative;
-                                    margin-left: 2rem;
-                                    font-size: 1rem;
-                                    color: rgb(124, 124, 124);
-                                    span {
-                                        color: black;
+                        .descripcion-proyectos {
+                            
+                            .experiencia-descripcion {
+                                padding-top: 2rem;
+                                padding-bottom: 2rem;
+                                .descripcion-titulo {
+                                    display: flex;
+                                    align-items: center;
+                                    margin: 1rem 0;
+                                    i {
+                                        padding-right: 1rem;
                                     }
-                                    &:first-child {
-                                        &::before {
-                                            content:'';
-                                            position: absolute;
-                                            width: .1rem;
-                                            height: 95%;
-                                            background-color: blue;
-                                            left: -1.2rem;
-                                            top: .8rem;
-                                        }
-                                        &::after {
-                                            content:'';
-                                            position: absolute;
-                                            width: .5rem;
-                                            height: .5rem;
-                                            background-color: blue;
-                                            border-radius: 100%;
-                                            left: -1.4rem;
-                                            top: .7rem;
-                                        }
+                                    h6 {
+                                        text-transform: uppercase;
+                                        margin: 0;
                                     }
-                                    &:nth-child(2) {
-                                        &::after {
-                                            content:'';
-                                            position: absolute;
-                                            width: .5rem;
-                                            height: .5rem;
-                                            background-color: blue;
-                                            border-radius: 100%;
-                                            left: -1.4rem;
-                                            top: .6rem;
+                                }
+                                ul {
+                                    li {
+                                        position: relative;
+                                        margin-left: 2rem;
+                                        font-size: 1rem;
+                                        color: rgb(124, 124, 124);
+                                        span {
+                                            color: black;
                                         }
+                                        &:first-child {
+                                            &::before {
+                                                content:'';
+                                                position: absolute;
+                                                width: .1rem;
+                                                height: 95%;
+                                                background-color: blue;
+                                                left: -1.2rem;
+                                                top: .8rem;
+                                            }
+                                            &::after {
+                                                content:'';
+                                                position: absolute;
+                                                width: .5rem;
+                                                height: .5rem;
+                                                background-color: blue;
+                                                border-radius: 100%;
+                                                left: -1.4rem;
+                                                top: .7rem;
+                                            }
+                                        }
+                                        &:nth-child(2) {
+                                            &::after {
+                                                content:'';
+                                                position: absolute;
+                                                width: .5rem;
+                                                height: .5rem;
+                                                background-color: blue;
+                                                border-radius: 100%;
+                                                left: -1.4rem;
+                                                top: .6rem;
+                                            }
+                                        }
+                                        
+    
                                     }
                                     
-
                                 }
-                                
+                            }
+                            .proyectos-derecha {
+                                padding-bottom: 2rem;
+
+                                img {
+                                    border-radius: 2rem;
+                                    width: 100%;
+                                    height: 18rem;
+                                    object-fit: cover;
+
+                                    &:hover {
+                                        cursor: pointer;
+                                    }
+                                }
                             }
                         }
                     }
@@ -207,6 +224,16 @@
                         }
                     }
                 }
+                .li-intereses {
+                    padding: 3rem;
+                    p {
+                        font-size: 1.2rem;
+                        color: rgb(122, 122, 122);
+                    }
+                    span {
+                        color: black;
+                    }
+                } 
             }
 
         }
@@ -230,5 +257,22 @@
         border-bottom: .1rem solid $gris;
         border-radius: 1rem;
         padding: 0 3rem;
+    }
+
+    .ver-mas {
+        display: block;
+        background-color: $principal;
+        color: black;
+        padding: .7rem;
+        border-radius: 1rem;
+        margin-top: 1rem;
+        text-align: center;
+        cursor: pointer;
+        border: .1rem solid darken($principal, 7);
+        transition: all .3s ease-in-out;
+        &:hover {
+            transform: scale(.985);
+            background-color: darken($principal, 7);
+        }
     }
 }

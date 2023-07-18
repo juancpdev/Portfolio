@@ -2,7 +2,9 @@ header {
     background-color: $secundario;
     height: 8rem;
     border-bottom: .1rem solid #0c5e5c;
-
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
    .header {
     display: flex;
     justify-content: space-between;
