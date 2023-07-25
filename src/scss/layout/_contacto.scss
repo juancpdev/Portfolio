@@ -91,20 +91,21 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                color: darken($principal, 30);
+                color: $principal;
                 font-size: 1.3rem;
                 cursor: pointer;
                 transition: all .5s ease-in-out;
-                border: .2rem solid darken($principal, 30);
+                border: .2rem solid $principal;
                 height: 4rem;
                 border-radius: 2rem;
+                opacity: .2;
                 i {
                     padding-right: .5rem;
                     font-size: 2rem;
                 }
                 
                 &:hover {
-                    color: $principal;
+                    opacity: 1;
                     transform: scale(1.05);
                     border: .2rem solid $principal;
                 }

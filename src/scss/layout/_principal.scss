@@ -1,5 +1,5 @@
 .contenedor-section-principal {
-    background-color: darken($secundario, 2);
+    background-image: linear-gradient(180deg, #032222, #0a4d4d);
     height: 80vh;
 }
 
@@ -97,7 +97,7 @@
         }
     }
 
-    .recursos {
+    .proyectos {
         @include boton(rgba(0, 0, 0, 0));
         &:hover {
             color: $principal;

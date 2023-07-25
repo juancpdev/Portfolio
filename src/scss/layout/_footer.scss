@@ -1,0 +1,50 @@
+footer {
+    background-color: $secundario;
+    height: 100%;
+    
+   .footer {
+        .contenedor-footer {
+            display: flex;
+            justify-content: space-around;
+            padding-top: 5rem;
+            align-items: center;
+            justify-items: center;
+            text-align: center;
+            .logo {
+                width: 15rem;
+                min-width: 10rem;
+                cursor: pointer;
+                padding: 3rem 0;
+            }
+            .redes {
+                @include grid(3, 2rem);
+
+                margin: 0;
+                @include tablet {
+                    justify-content: end;
+                    padding-bottom: 0;
+                }
+                i {
+                    font-size: 2rem;
+                    color: darken($principal, 15);
+                    cursor: pointer;
+                    transition: transform 0.5s ease-in-out, scale 0.5s ease-in-out;
+                }
+                i:hover {
+                    color: $principal;
+                    transform: rotate(360deg) scale(1.2);
+                }
+            }
+        }
+        
+        .derechos {
+            color: darken($principal, 30);
+            padding-bottom: 1rem;
+            font-size: 1rem;
+            text-align: center;
+            @include tablet {
+                font-size: 1.3rem;
+            }
+        }
+    }
+}

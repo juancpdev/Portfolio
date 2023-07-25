@@ -11,8 +11,11 @@
             @include telefono {
                 @include grid(2, 4rem)
             }
-            @include tablet {
-                @include grid(4, 4rem)
+            @include tabletXL {
+                @include grid(4, 3rem)
+            }
+            @include desktop {
+                @include grid(4, 5rem)
             }
         }
     }
@@ -32,11 +35,12 @@
             background-color: darken($principal, 25);
             width: 4rem;
             height: 4rem;
-            i {
-                height: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                width: 2.5rem;
+                height: 2.5rem;
             }
         }
         p {

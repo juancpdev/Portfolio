@@ -1,0 +1,163 @@
+.dark-mode {
+    // HEADER
+    header, footer {
+        background-color: black;
+    }
+
+    // PRINCIPAL
+    .navegacion-mobile {
+        background-color: black !important;
+    }
+    .contenedor-section-principal {
+        background-image: none;
+        background-color: $dark2;
+        .cv {
+            background-color: $rosa;
+            border: .1rem solid $rosa;
+            &:hover {
+                box-shadow: 0 0 .7rem .1rem #7e0274b4 ;
+            }
+        }
+        .proyectos {
+            border: .1rem solid lighten($rosa, 15);
+            &:hover {
+                color: lighten($rosa, 15);
+                box-shadow: 0 0 .7rem .1rem #ad029fb4 ;
+            }
+        }
+    }
+
+    // APTITUDES
+    .contenedor-section-aptitudes {
+        background-color: darken($rosa, 8);
+        .contenedor-icono { 
+            background-color: darken($rosa, 1);
+        }
+        .aptitud-titulo {
+            color: white;
+        }
+        .aptitud-descripcion {
+            color: rgb(141, 141, 141);
+        }
+    }
+
+    // SOBRE MI
+    .contenedor-section-sobremi { 
+        background-color: $dark2;
+        color: white;
+        .contenedores {
+            background-color: darken($rosa, 8);
+            border: .1rem solid darken($rosa, 5);
+            border-radius: 1rem;
+        }
+        .exp-listas {
+            border-bottom: .1rem solid lighten($rosa, 1);
+            border-radius: 1rem;
+            padding: 0 3rem;
+        }
+
+        .contenedor-imagen-perfil {
+            box-shadow: lighten($rosa, 15) 0rem 0rem 1rem !important;
+        }
+        .perfil-nombre {
+            p {
+                color: rgb(112, 112, 112);
+            }
+        }
+        .perfil-descripcion {
+            color: rgb(152, 152, 152) !important;
+        }
+        .perfil-contenedor2 { 
+            background-color: darken($rosa, 8) !important;
+        }
+
+        .perfil-nombre2 { 
+            p {
+                color: rgb(112, 112, 112);
+            }
+        }
+        .proyectos-num {
+            color: white !important;
+            border: 1px solid $rosa2 !important;
+        }
+        .fa-angle-down, .fa-code, .fa-circle-info, .descripcion-titulo h6 {
+            color: $rosa2;
+        }
+        .descripcion-proyectos {
+            background-color: darken($rosa, 6);
+        }
+        .descripcion-li {
+            &::before, &::after {
+                background-color: $rosa2 !important;
+            }
+            span {
+                color: white !important;
+            }
+            a {
+                color: rgb(172, 12, 132);
+            }
+        }
+        .ver-mas {
+            background-color: darken($rosa2, 20);
+            border: .1rem solid $rosa;
+        }
+
+        .perfil-descripcion {
+            color: white !important;
+            span {
+                color: red !important;
+            }
+        }
+
+        .tecnologias-contenedor, .tecnologias-fijado {
+            ul {
+                li {
+                    border: .1rem solid #550257 !important;
+                }
+            }
+        }
+    }
+
+    // CONTACTO
+    .section-contacto { 
+        background-color: rgb(129, 2, 97);
+        .contenedor-freelance {
+            .freelance {
+                color: black ;
+            }
+        }
+        .descripcion-contacto {
+            color: #000000 ;
+        }
+        .contacto-derecha {
+            h3 {
+                color: $rosa2;
+                span {
+                    color: black;
+                }
+            }
+            ul {
+                li {
+                    color: $rosa2;
+                    border: .2rem solid $rosa2;
+                    &:hover {
+                        border: .2rem solid $rosa2;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+    // RECURSOS
+    .section-recursos { 
+        background-color: $dark2;
+
+    }
+}
