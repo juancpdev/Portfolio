@@ -1,5 +1,6 @@
 footer {
     background-color: $secundario;
+    border-top: .1rem solid #0c5e5c;
     height: 100%;
     
    .footer {
@@ -15,6 +16,9 @@ footer {
                 min-width: 10rem;
                 cursor: pointer;
                 padding: 3rem 0;
+                .logo2 {
+                    display: none;
+                }
             }
             .redes {
                 @include grid(3, 2rem);

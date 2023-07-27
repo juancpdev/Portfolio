@@ -1,43 +1,74 @@
 .dark-mode {
     // HEADER
-    header, footer {
-        background-color: black;
+    header{
+        background-color: darken(#121212, 3);
+        border-bottom: .1rem solid #501d31;
+        .icono-menu {
+            color: #E84A8A !important;
+        }
+        .logo1 {
+            display: none;
+        }
+        .logo2 {
+            display: block !important;
+        }
+    }
+    .contenedor-nav li a {
+        color: #E84A8A !important;
+        &:hover {
+            color: #e84a89ab !important;
+        }
+        &::after {
+            background: #e84a89ab !important;
+        }
+    }
+
+    .navegacion-mobile {
+        background-color: darken(#121212, 3);
+        border-bottom: .1rem solid #501d31;
     }
 
     // PRINCIPAL
-    .navegacion-mobile {
-        background-color: black !important;
-    }
     .contenedor-section-principal {
         background-image: none;
-        background-color: $dark2;
-        .cv {
-            background-color: $rosa;
-            border: .1rem solid $rosa;
-            &:hover {
-                box-shadow: 0 0 .7rem .1rem #7e0274b4 ;
+        background-image: linear-gradient(180deg, $dark2, $rosa);
+        .contenedor-botones {
+            .in {
+                @include boton(#ed1df150);
+                border: .1rem solid #ed1df100;
+                &:hover {
+                    box-shadow: 0 0 .7rem .1rem #ed1df150 ;
+                }
+            }
+            .gh {
+                border: .1rem solid lighten($rosa, 15);
+                &:hover {
+                    color: lighten($rosa, 15);
+                    box-shadow: 0 0 .7rem .1rem #ad029f59 !important;
+                }
             }
         }
-        .proyectos {
-            border: .1rem solid lighten($rosa, 15);
-            &:hover {
-                color: lighten($rosa, 15);
-                box-shadow: 0 0 .7rem .1rem #ad029fb4 ;
+        .section-principal-img {
+            .photo-perfil {
+                background-color: darken($rosa2, 40);
+                box-shadow: 0 0 10px 5px #850b6a;
             }
         }
     }
 
     // APTITUDES
     .contenedor-section-aptitudes {
+        border-top: 2px solid darken($rosa2, 40);
+        border-bottom: 2px solid darken($rosa2, 40);
         background-color: darken($rosa, 8);
         .contenedor-icono { 
-            background-color: darken($rosa, 1);
+            background-color: darken($rosa2, 30);
         }
         .aptitud-titulo {
             color: white;
         }
         .aptitud-descripcion {
-            color: rgb(141, 141, 141);
+            color: rgb(184, 181, 181);
         }
     }
 
@@ -57,7 +88,8 @@
         }
 
         .contenedor-imagen-perfil {
-            box-shadow: lighten($rosa, 15) 0rem 0rem 1rem !important;
+            box-shadow: 0 0 10px 2px #850b6a !important;
+            background-color: darken($rosa2, 40) !important;
         }
         .perfil-nombre {
             p {
@@ -69,6 +101,11 @@
         }
         .perfil-contenedor2 { 
             background-color: darken($rosa, 8) !important;
+        }
+
+        .contenedor-imagen-perfil2 {
+            background-color: darken($rosa2, 40) !important;
+            box-shadow: 0 0 10px 5px #850b6a !important;
         }
 
         .perfil-nombre2 { 
@@ -105,7 +142,7 @@
         .perfil-descripcion {
             color: white !important;
             span {
-                color: red !important;
+                color: $rosa3 !important;
             }
         }
 
@@ -120,20 +157,22 @@
 
     // CONTACTO
     .section-contacto { 
-        background-color: rgb(129, 2, 97);
+        border-top: 2px solid darken($rosa2, 40);
+        border-bottom: 2px solid darken($rosa2, 40);
+        background-color: darken($rosa, 8);
         .contenedor-freelance {
             .freelance {
-                color: black ;
+                color: white ;
             }
         }
         .descripcion-contacto {
-            color: #000000 ;
+            color: rgb(184, 181, 181);
         }
         .contacto-derecha {
             h3 {
                 color: $rosa2;
                 span {
-                    color: black;
+                    color: white ;
                 }
             }
             ul {
@@ -148,16 +187,60 @@
         }
     }
 
-
-
-
-
-
-
-
     // RECURSOS
     .section-recursos { 
         background-color: $dark2;
+        .contenedor-titulo {
+            p {
+                color: rgb(184, 181, 181);
+            }
+        }
+        h4 {
+            color: $rosa2;
+            &::after {
+                background-color: $rosa2;
+            }
+        }
+        .recursos {
+            a {
+                color: darken($rosa2, 40) !important;
+                &:hover {
+                    text-shadow: darken($rosa2, 50) 2px 2px 5px !important;
+                }
+            }
+            .subtitulos {
+                color: rgb(150, 150, 150);
+            }
+        }
+    }
 
+    // FLECHA 
+    .flecha {
+        background-color: darken($rosa, 10);
+        border: .2rem solid darken($rosa2, 10);
+        i {
+            color: darken($rosa2, 10);
+        }
+    }
+
+    // FOOTER
+    footer {
+        border-top: .1rem solid #501d31;
+        background-color: darken(#121212, 3);
+        .redes li a i{ 
+            color: #e84a899a !important;
+            &:hover {
+                color: #E84A8A !important;
+            }
+        }
+        .derechos {
+            color: #E84A8A !important;
+        }
+        .logo1 {
+            display: none;
+        }
+        .logo2 {
+            display: block !important;
+        }
     }
 }

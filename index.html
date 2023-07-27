@@ -11,14 +11,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
-    <title>Portfolio</title>
+    <link rel="icon" href="build/img/favicon2.png" type="image/x-icon">
+    <title>JPDev | Front-End Developer</title>
     
 </head>
 <body>
     <header>
         <div class="header contenedor">
             <a class="logo" href="/">
-                <img src="build/img/logo.webp" alt="Logo">
+                <img class="logo1" src="build/img/logo.webp" alt="Logo">
+                <img class="logo2" src="build/img/logo2.webp" alt="Logo">
             </a>
 
             <div class="header-nav">
@@ -33,16 +35,10 @@
                 <div class="modos">
                     <img class="icono-luna" src="build/img/moon.svg" alt="icono-oscuro">
                     <img class="icono-sol" src="build/img/sun.svg" alt="icono-claro">
-                </div>
-                
-
-                <div class="header-mobile">
-                    <div class="barra">
-                        <img class="icono-menu" src="/build/img/menu.svg" alt="icono-menu">
+                    <div class="menu">
+                        <i class="icono-menu fa-solid fa-bars"></i>
                     </div>
                 </div>
-            </div>
-
         </div>
     </header>
     <nav class="navegacion-mobile">
@@ -54,23 +50,26 @@
     </nav>
     <main>
         <section class="contenedor-section-principal ">
-            <div class="section-principal contenedor">
-                <div class="texto-presentacion">
-                    <p class="saludo">Hola! <img src="build/img/mano.webp" alt="Saludo"> , Soy</p>
-                    <h1 class="gradiente-letras">Juan Cruz Pineda</h1>
-                    <p class="descripcion">Front-End Developer autodidacta, apasionado por la tecnología y experto en la creación de interfaces web intuitivas y atractivas.</p>
+            <div class="contenedor-principal contenedor">
+                <div class="section-principal-texto">
+                    <div class="texto-presentacion">
+                        <p class="saludo">Hola! <img src="build/img/mano.webp" alt="Saludo"> , Soy</p>
+                        <h1 class="gradiente-letras">Juan Cruz Pineda</h1>
+                        <p class="descripcion"><strong>Front-End Developer</strong> autodidacta, apasionado por la tecnología y experto en la creación de interfaces web intuitivas y atractivas.</p>
+                    </div>
+        
+                    <div class="contenedor-botones">
+                        <a href="https://www.linkedin.com/in/juancpdev/" class="boton in" target="_blank"><i class="fa-brands fa-linkedin"></i> Linkedin</a>
+                        <a href="https://github.com/juancpdev" class="boton gh" target="_blank"><i class="fa-brands fa-github"></i> Github</a>
+                    </div>
                 </div>
-    
-                <div class="contenedor-botones">
-                    <button class="boton cv">Currículum</button>
-                    <button class="boton proyectos">Proyectos</button>
+                <div class="section-principal-img">
+                    <div class="photo-perfil">
+                        <picture>
+                            <img src="/build/img/foto-perfil.webp" alt="Foto-Perfil">
+                        </picture>
+                    </div>
                 </div>
-    
-                <ul class="redes">
-                    <li><a href="https://www.linkedin.com/in/juancpdev/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></i></li>
-                    <li><a href="https://github.com/juancpdev" target="_blank"><i class="fa-brands fa-github"></i></a></li>
-                    <li><a href="mailto:juan_pineda_12@hotmail.es" target="_blank"><i class="fa-regular fa-envelope"></i></a></li>
-                </ul>
             </div>
         </section>
 
@@ -131,20 +130,19 @@
                             <h4 class="subtitulos">Perfil</h4>
                             <div class="perfil-contenedor contenedores">
                                 <div class="perfil">
-                                    <figure class="contenedor-imagen-perfil">
+                                    <picture class="contenedor-imagen-perfil">
                                         <span class="disponible">
                                             <span class="disponible-animacion"></span>
                                             <span class="disponible-circulo"></span>
                                         </span>
-                                        <img src="/build/img/perfil.webp" alt="Foto De Perfil">
-                                    </figure>
+                                        <img src="/build/img/foto-perfil.webp" alt="Foto De Perfil">
+                                    </picture>
                                     <div class="perfil-nombre">
                                         <h5>Juan Cruz Pineda</h5>
                                         <p>Front-End Developer</p>
                                     </div>
                                 </div>
-                                <p class="perfil-descripcion">Como Frontend Developer, mi pasión por la programación se despertó en el año 2020, cuando decidí sumergirme de lleno en el fascinante mundo del desarrollo web. Desde entonces, he dedicado mi <span>tiempo y esfuerzo</span> a perfeccionar mis habilidades en el arte de crear experiencias visuales y funcionales para los usuarios a través del código. <br>
-                                En mi portfolio, encontrarás una selección de proyectos que he llevado a cabo, cada uno con un enfoque único y desafiante. <br>
+                                <p class="perfil-descripcion">Mi pasión por la programación se despertó en el año 2020, cuando decidí sumergirme de lleno en el fascinante mundo del desarrollo web. Desde entonces, he dedicado mi <span>tiempo y esfuerzo</span> a perfeccionar mis habilidades en el arte de crear experiencias visuales y funcionales para los usuarios a través del código. <br>
                                 Siempre estoy abierto a <span>nuevas oportunidades</span> y colaboraciones, así que no dudes en contactarme para futuros proyectos.
                                 </p>
                             </div>
@@ -156,13 +154,9 @@
                                             <i class="equis fa-solid fa-x"></i>
                                         </div>
                                         <div class="perfil2">
-                                            <figure>
-                                                <span class="disponible2">
-                                                    <span class="disponible-animacion2"></span>
-                                                    <span class="disponible-circulo2"></span>
-                                                </span>
-                                                <img src="/build/img/perfil.webp" alt="Foto De Perfil">
-                                            </figure>
+                                            <picture class="contenedor-imagen-perfil2">
+                                                <img src="/build/img/foto-perfil.webp" alt="Foto De Perfil">
+                                            </picture>
                                             <div class="perfil-nombre2">
                                                 <h5>Juan Cruz Pineda</h5>
                                                 <p>Front-End Developer</p>
@@ -439,7 +433,7 @@
                     </div>
                     <div class="recursos">
                         <a href="https://www.tailwindcss-animated.com/configurator.html" target="_blank" class="titulo">Animaciónes en Tailwind</a>
-                        <p class="subtitulos"> Si tienes pensado hacer animaciónes pero no saben cómo, esta web te ayudará a crear animaciónes súper fácil. </p>
+                        <p class="subtitulos"> Si tienes pensado hacer animaciónes pero no sabes cómo, esta web te ayudará a crear animaciónes súper fácil. </p>
                     </div>
                     <div class="recursos">
                         <a href="https://www.onlineimagetool.com/es/convert-png-jpg-webp-gif" target="_blank" class="titulo">Convertir formato de imágenes</a>
@@ -453,7 +447,8 @@
             <div class="footer contenedor">
                 <div class="contenedor-footer">
                     <a class="logo" href="/">
-                        <img src="build/img/logo.webp" alt="Logo">
+                        <img class="logo1" src="build/img/logo.webp" alt="Logo">
+                        <img class="logo2" src="build/img/logo2.webp" alt="Logo">
                     </a>
 
                     <ul class="redes">
@@ -465,7 +460,7 @@
                 <p class="derechos">&copy Todos los derechos reservados por Juan Cruz Pineda - <span id="year"></span></p>
             </div>
         </footer>
-        <a href="#" class="flecha">
+        <a href="/" class="flecha">
             <i class="fa-solid fa-arrow-up"></i>
         </a>
     </main>

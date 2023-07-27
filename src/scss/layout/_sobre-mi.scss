@@ -1,6 +1,10 @@
 .contenedor-section-sobremi {
     background-color: darken($blanco, 5);
     padding: 5rem 0;
+    scroll-margin-top: 6rem;
+    @include tabletXL {
+        scroll-margin-top: 8rem;
+    }
     .contenedor-sobremi {
         padding: 5rem 0;
         h2 {
@@ -27,6 +31,9 @@
                     right: 0;
                     left: 0;
                     .perfil-fijado2 {
+                        opacity: 0;
+                        transform: scale(0);
+                        transition: opacity 0.3s ease-in-out, transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                         position: fixed;
                         max-width: 50rem;
                         max-height: 50rem;
@@ -63,11 +70,20 @@
                                 justify-content: center;
                                 align-items: center;
                                 padding: 0 5rem 1.5rem 5rem;
-                                figure {
-                                    min-width: 20rem;
-                                    max-width: 20rem;
-                                    margin: 0;
+                                .contenedor-imagen-perfil2 {
                                     position: relative;
+                                    background-color: darken(#0bb6b5, 10);
+                                    overflow: hidden;
+                                    height: 25rem;
+                                    width: 25rem;
+                                    box-shadow: 0 0 10px 5px #036868;
+                                    border-radius: 50%;
+                                    margin-bottom: 1rem;
+                                    img {
+                                        object-fit: cover;
+                                        filter: drop-shadow(10px -5px 10px #000) contrast(110%);
+                                        height: 28rem;
+                                    }
                                 }
                                 .perfil-nombre2 {
                                     display: flex;
@@ -164,7 +180,8 @@
                             margin: 0;
                             position: relative;
                             border-radius: 100%;
-                            box-shadow: 0rem 0rem 1rem;
+                            box-shadow: 0 0 10px 2px #036868;
+                            background-color: #088685;
                             .disponible {
                                 display: flex;
                                 height: 2rem;
@@ -212,6 +229,9 @@
                     .perfil-descripcion {
                         font-size: 1.2rem;
                         color: rgb(122, 122, 122);
+                        span {
+                            color: black ;
+                        }
                     }
                 }
 

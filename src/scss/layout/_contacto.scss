@@ -1,6 +1,9 @@
 .section-contacto {
     background-color: $secundario;
-
+    scroll-margin-top: 6rem;
+    @include tabletXL {
+        scroll-margin-top: 8rem;
+    }
     .contenedor-contacto {
         padding: 4rem 2rem;
         @include tablet {
@@ -16,7 +19,7 @@
         align-items: center;
         @include tablet {
             justify-content: center;
-            align-items: start;
+            align-items: flex-start;
         }
         .contenedor-freelance {
             .freelance {
@@ -98,7 +101,7 @@
                 border: .2rem solid $principal;
                 height: 4rem;
                 border-radius: 2rem;
-                opacity: .2;
+                opacity: .5;
                 i {
                     padding-right: .5rem;
                     font-size: 2rem;

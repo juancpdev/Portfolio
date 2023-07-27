@@ -1,6 +1,10 @@
 .section-recursos {
     padding: 8rem 0;
     background-color: darken($blanco, 5);
+    scroll-margin-top: 6rem;
+    @include tabletXL {
+        scroll-margin-top: 8rem;
+    }
     .contenedor-titulo {
         padding-bottom: 3rem;
         h2 {

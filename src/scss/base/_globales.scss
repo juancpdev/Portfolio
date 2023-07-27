@@ -10,7 +10,7 @@ body {
     font-family: $fuente_principal;
     font-size: 1.6rem;
     line-height: 1.8;
-    
+    transition: opacity 0.5s ease-in-out;
 }
 p {
     color: $negro;
@@ -112,4 +112,33 @@ ul {
 
 .ocultar {
     display: none;
+}
+
+/* Esto es para Webkit (Safari y Chrome) */
+::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+    background: black; /* Color de la pista de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb {
+    background: $principal; /* Color del control deslizante de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: darken($principal, 20) /* Color del control deslizante de la barra de desplazamiento al pasar el ratón por encima */
+}
+
+/* Esto es para Firefox */
+* {
+    scrollbar-width: thin; /* Ancho de la barra de desplazamiento */
+    scrollbar-color: #888 #f1f1f1; /* Color del control deslizante y de la pista de la barra de desplazamiento */
+}
+
+
+// darkmode 
+.dark-mode::-webkit-scrollbar-thumb {
+    background: $rosa2; /* Cambia al color de la barra de desplazamiento deseado en el modo oscuro */
 }
