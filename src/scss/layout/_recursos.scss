@@ -20,6 +20,7 @@
             color: $secundario;
             font-size: 1.1rem;
             text-align: center;
+            margin-bottom: 3rem;
             @include telefono {
                 font-size: 1.3rem;
             }
@@ -48,6 +49,10 @@
         }
 
         .recursos {
+            margin: 0 1rem;
+            @include tablet {
+                margin: 0;
+            }
             .titulo {
                 color: darken($principal, 15);
                 font-size: 1.8rem;
@@ -60,6 +65,9 @@
             .subtitulos {
                 font-size: 1.1rem;
                 color: $secundario;
+            }
+            .fa-link {
+                opacity: .5;
             }
         }
     }

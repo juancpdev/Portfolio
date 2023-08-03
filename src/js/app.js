@@ -136,7 +136,6 @@ function setupNavigation() {
     }
 
     // Agrega el manejador de eventos de clic a los enlaces de navegación, al logo y a la flecha
-    document.querySelectorAll('.logo').forEach(logo => logo.addEventListener('click', handleClick));
     document.querySelector('.flecha').addEventListener('click', handleClick);
     document.querySelectorAll('.contenedor-nav a').forEach(link => link.addEventListener('click', handleClick));
 }

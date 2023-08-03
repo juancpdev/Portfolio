@@ -33,20 +33,21 @@
         background-image: none;
         background-image: linear-gradient(180deg, $dark2, $rosa);
         .contenedor-botones {
-            .in {
-                @include boton(#ed1df150);
-                border: .1rem solid #ed1df100;
-                &:hover {
-                    box-shadow: 0 0 .7rem .1rem #ed1df150 ;
+            .cv-redes {
+                .cv {
+                    @include boton(#ed1df150);
+                    &:hover {
+                        box-shadow: 0 0 .7rem .1rem #ed1df150 ;
+                    }
+                }
+                .redes li a i{ 
+                    color: #e84a899a !important;
+                    &:hover {
+                        color: #E84A8A !important;
+                    }
                 }
             }
-            .gh {
-                border: .1rem solid lighten($rosa, 15);
-                &:hover {
-                    color: lighten($rosa, 15);
-                    box-shadow: 0 0 .7rem .1rem #ad029f59 !important;
-                }
-            }
+            
         }
         .section-principal-img {
             .photo-perfil {
@@ -123,7 +124,7 @@
         .descripcion-proyectos {
             background-color: darken($rosa, 6);
         }
-        .descripcion-li {
+        .descripcion-li, .descripcion-li2 {
             &::before, &::after {
                 background-color: $rosa2 !important;
             }
@@ -131,7 +132,7 @@
                 color: white !important;
             }
             a {
-                color: rgb(172, 12, 132);
+                color: $rosa3;
             }
         }
         .ver-mas {
@@ -227,12 +228,6 @@
     footer {
         border-top: .1rem solid #501d31;
         background-color: darken(#121212, 3);
-        .redes li a i{ 
-            color: #e84a899a !important;
-            &:hover {
-                color: #E84A8A !important;
-            }
-        }
         .derechos {
             color: #E84A8A !important;
         }
@@ -241,6 +236,13 @@
         }
         .logo2 {
             display: block !important;
+        }
+    }
+
+    .redes li a i{ 
+        color: #e84a899a !important;
+        &:hover {
+            color: #E84A8A !important;
         }
     }
 }

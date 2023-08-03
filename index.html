@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="build/css/app.css">
+    <link rel="stylesheet" href="build/css/app.css?v=1.2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
@@ -59,9 +59,16 @@
                     </div>
         
                     <div class="contenedor-botones">
-                        <a href="https://www.linkedin.com/in/juancpdev/" class="boton in" target="_blank"><i class="fa-brands fa-linkedin"></i> Linkedin</a>
-                        <a href="https://github.com/juancpdev" class="boton gh" target="_blank"><i class="fa-brands fa-github"></i> Github</a>
+                        <div class="cv-redes">
+                            <a href="build/img/CV 2023.pdf" class="boton cv" target="_blank"><i class="fa-solid fa-file-pdf"></i> Ver CV</a>
+                            <ul class="redes">
+                                <li><a href="https://www.linkedin.com/in/juancpdev/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></i></li>
+                                <li><a href="https://github.com/juancpdev" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                                <li><a href="mailto:contacto@jpdev.site" target="_blank"><i class="fa-regular fa-envelope"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
+                    
                 </div>
                 <div class="section-principal-img">
                     <div class="photo-perfil">
@@ -217,8 +224,15 @@
                                                         <h6>Informacion</h6>
                                                     </div>
                                                     <ul>
-                                                        <li class="descripcion-li"><span>Proyecto de festival de música, incluye una galería de fotos hecha con JavaScript</span></li>
-                                                        <li class="descripcion-li"><span>Tecnologías:</span> HTML, CSS, SCSS y JavaScript.</li>
+                                                        <li class="descripcion-li"><span>Proyecto de festival de música, incluye una galería de fotos hecha con JavaScript.</span></li>
+                                                        <li class="descripcion-li"><span>Tecnologías:</span>
+                                                            <div class="proyecto-tecnologias">
+                                                                <img src="build/img/html.svg" alt="">
+                                                                <img src="build/img/css.svg" alt="">
+                                                                <img src="build/img/sass.svg" alt="">
+                                                                <img src="build/img/js.svg" alt="">
+                                                            </div> 
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <div>
@@ -227,8 +241,8 @@
                                                         <h6>Enlaces</h6>
                                                     </div>
                                                     <ul>
-                                                        <li class="descripcion-li"><a href="https://github.com/juancpdev/Festival-Musica" target="_blank">Github</a></li>
-                                                        <li class="descripcion-li"><a href="https://tourmaline-alfajores-527d99.netlify.app/" target="_blank">Ver Proyecto</a></li>
+                                                        <li class="descripcion-li2"><a href="https://github.com/juancpdev/Festival-Musica" target="_blank">Github</a></li>
+                                                        <li class="descripcion-li2"><a href="https://tourmaline-alfajores-527d99.netlify.app/" target="_blank">Ver Proyecto</a></li>
                                                     </ul>
                                                 </div>
                                             </li>
@@ -257,8 +271,15 @@
                                                         <h6>Informacion</h6>
                                                     </div>
                                                     <ul>
-                                                        <li class="descripcion-li"><span>Proyecto sobre validación de formulario con JavaScript</span></li>
-                                                        <li class="descripcion-li"><span>Tecnologías:</span> HTML, CSS, SCSS y JavaScript.</li>
+                                                        <li class="descripcion-li"><span>Proyecto sobre validación de formulario con JavaScript.</span></li>
+                                                        <li class="descripcion-li"><span>Tecnologías:</span>
+                                                            <div class="proyecto-tecnologias">
+                                                                <img src="build/img/html.svg" alt="">
+                                                                <img src="build/img/css.svg" alt="">
+                                                                <img src="build/img/sass.svg" alt="">
+                                                                <img src="build/img/js.svg" alt="">
+                                                            </div> 
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <div>
@@ -267,8 +288,8 @@
                                                         <h6>Enlaces</h6>
                                                     </div>
                                                     <ul>
-                                                        <li class="descripcion-li"><a href="https://github.com/juancpdev/FrontendMentor.io-formulario" target="_blank">Github</a></li>
-                                                        <li class="descripcion-li"><a href="https://sparkly-mochi-cb14a8.netlify.app/" target="_blank">Ver Proyecto</a></li>
+                                                        <li class="descripcion-li2"><a href="https://github.com/juancpdev/FrontendMentor.io-formulario" target="_blank">Github</a></li>
+                                                        <li class="descripcion-li2"><a href="https://sparkly-mochi-cb14a8.netlify.app/" target="_blank">Ver Proyecto</a></li>
                                                     </ul>
                                                 </div>
                                             </li>
@@ -284,7 +305,7 @@
                                     <li class="proyectos-titulo exp-listas">
                                         <div class="izquierda">
                                             <div class="proyectos-num">3</div>
-                                            <h5>Bienes Raices</h5>
+                                            <h5>Bienes Raíces</h5>
                                         </div>
                                         <i class="derecha fa-solid fa-angle-down giro"></i>
                                     </li>
@@ -297,8 +318,17 @@
                                                         <h6>Informacion</h6>
                                                     </div>
                                                     <ul>
-                                                        <li class="descripcion-li"><span>Proyecto de bienes raices, compra y venta de propiedades, con un apartado de admin con CRUD, contiene base de datos</span></li>
-                                                        <li class="descripcion-li"><span>Tecnologías:</span> HTML, CSS, SCSS, JavaScript, MySQL y PHP</li>
+                                                        <li class="descripcion-li"><span>Proyecto de bienes raíces, compra y venta de propiedades, con un apartado de admin con CRUD, contiene base de datos.</span></li>
+                                                        <li class="descripcion-li"><span>Tecnologías:</span>
+                                                            <div class="proyecto-tecnologias">
+                                                                <img src="build/img/html.svg" alt="">
+                                                                <img src="build/img/css.svg" alt="">
+                                                                <img src="build/img/sass.svg" alt="">
+                                                                <img src="build/img/js.svg" alt="">
+                                                                <img src="build/img/mysql.svg" alt="">
+                                                                <img src="build/img/php.svg" alt="">
+                                                            </div> 
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <div>
@@ -307,8 +337,8 @@
                                                         <h6>Enlaces</h6>
                                                     </div>
                                                     <ul>
-                                                        <li class="descripcion-li"><a href="https://github.com/juancpdev/bienesraicesMVC" target="_blank">Github</a></li>
-                                                        <li class="descripcion-li"><a href="https://jpdevbienesraices.domcloud.io/" target="_blank">Ver Proyecto</a></li>
+                                                        <li class="descripcion-li2"><a href="https://github.com/juancpdev/bienesraicesMVC" target="_blank">Github</a></li>
+                                                        <li class="descripcion-li2"><a href="https://jpdevbienesraices.domcloud.io/" target="_blank">Ver Proyecto</a></li>
                                                     </ul>
                                                 </div>
                                             </li>
@@ -396,7 +426,7 @@
                         <p class="freelance text">Freelance</p>
                         <p class="disponible text">Disponible</p>
                     </div>
-                    <p class="descripcion-contacto">Mis principales competencias profesionales están relacionadas al diseño y desarrollo web.
+                    <p class="descripcion-contacto">Mis principales competencias profesionales están relacionadas con el diseño y desarrollo web.
                         Siempre me mantengo actualizado para ofrecer soluciones innovadoras a mis clientes.
                     </p>
                 </div>
@@ -405,7 +435,7 @@
                     <ul>
                         <a href="https://www.linkedin.com/in/juancpdev/" target="_blank"> <li><i class="fa-brands fa-linkedin-in"></i> Linkedin</li></a>
                         <a href="https://github.com/juancpdev" target="_blank"><li><i class="fa-brands fa-github"></i> Github</li></a>
-                        <a href="mailto:juan_pineda_12@hotmail.es" target="_blank"><li><i class="fa-regular fa-envelope"></i> E-mail</li></a>
+                        <a href="mailto:contacto@jpdev.site" target="_blank"><li><i class="fa-regular fa-envelope"></i> E-mail</li></a>
                     </ul>
                 </div>
             </div>
@@ -417,27 +447,27 @@
                     <h2 class="gradiente-letras">Recursos</h2>
                     <p>Estas son algunas herramientas que utilizo con frecuencia en mis proyectos</p>
                 </div>
-                <h4>Sitios Web</h4>
+                
                 <div class="contenedor-recursos">
                     <div class="recursos">
-                        <a href="https://freeicons.io/" target="_blank" class="titulo">Iconos personalizables</a>
-                        <p class="subtitulos">La mayoria de mis proyectos usan iconos de esta pagina web, te da la posibilidad de que los iconos sean formato svg (lo que significa que se pueden escalar a cualquier tamaño sin perder calidad). </p>
+                        <a href="https://freeicons.io/" target="_blank" class="titulo"><i class="fa-solid fa-link"></i> Iconos personalizables</a>
+                        <p class="subtitulos">La mayoría de mis proyectos usan iconos de esta página web, te da la posibilidad de que los iconos sean formato SVG (lo que significa que se pueden escalar a cualquier tamaño sin perder calidad). </p>
                     </div>
                     <div class="recursos">
-                        <a href="https://lofigenerator.com/" target="_blank" class="titulo">Concentrate con esta música lofi</a>
-                        <p class="subtitulos"> Siempre me gustó programar con lofi de fondo, antes lo hacía de Youtube pero al conocer esta web, me encantó su interfaz super minimalista y sin interrupciones </p>
+                        <a href="https://lofigenerator.com/" target="_blank" class="titulo"><i class="fa-solid fa-link"></i> Concentrate con esta música lofi</a>
+                        <p class="subtitulos"> Siempre me gustó programar con lofi de fondo, antes lo hacía de YouTube, pero al conocer esta web, me encantó su interfaz superminimalista y sin interrupciones. </p>
                     </div>
                     <div class="recursos">
-                        <a href="https://hotpot.ai/color-generator?s=google&ad=color-generator&gclid=Cj0KCQjw4PKTBhD8ARIsAHChzRJDRlVMxQhF91TPcxpCwtK-nxCEk-7yQBboYEP7OuWtV32xNmmpkhkaAm9dEALw_wcB" target="_blank" class="titulo">Paleta de Colores</a>
+                        <a href="https://hotpot.ai/color-generator?s=google&ad=color-generator&gclid=Cj0KCQjw4PKTBhD8ARIsAHChzRJDRlVMxQhF91TPcxpCwtK-nxCEk-7yQBboYEP7OuWtV32xNmmpkhkaAm9dEALw_wcB" target="_blank" class="titulo"><i class="fa-solid fa-link"></i> Paleta de Colores</a>
                         <p class="subtitulos"> Esta web ayuda muchisimo a generar ideas de colores, combinaciones, fondos, textos, gradientes, muy completa. </p>
                     </div>
                     <div class="recursos">
-                        <a href="https://www.tailwindcss-animated.com/configurator.html" target="_blank" class="titulo">Animaciónes en Tailwind</a>
-                        <p class="subtitulos"> Si tienes pensado hacer animaciónes pero no sabes cómo, esta web te ayudará a crear animaciónes súper fácil. </p>
+                        <a href="https://www.tailwindcss-animated.com/configurator.html" target="_blank" class="titulo"><i class="fa-solid fa-link"></i> Animaciónes en Tailwind</a>
+                        <p class="subtitulos"> Si tienes pensado hacer animaciones, pero no sabes cómo, esta web te ayudará a crear animaciones fácilmente. </p>
                     </div>
                     <div class="recursos">
-                        <a href="https://www.onlineimagetool.com/es/convert-png-jpg-webp-gif" target="_blank" class="titulo">Convertir formato de imágenes</a>
-                        <p class="subtitulos"> Lo utilizo mucho cuando necesito usar imagenes webp para mis proyectos, tambien sirve para pasar a PNG o JPG.</p>
+                        <a href="https://www.onlineimagetool.com/es/convert-png-jpg-webp-gif" target="_blank" class="titulo"><i class="fa-solid fa-link"></i> Convertir formato de imágenes</a>
+                        <p class="subtitulos"> Lo utilizo mucho cuando necesito usar imágenes WebP para mis proyectos, también sirve para pasar a PNG o JPG.</p>
                     </div>
                 </div>
             </div>
@@ -452,9 +482,9 @@
                     </a>
 
                     <ul class="redes">
-                    <li><a href="https://www.linkedin.com/in/juancpdev/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></i></li>
-                    <li><a href="https://github.com/juancpdev" target="_blank"><i class="fa-brands fa-github"></i></a></li>
-                    <li><a href="mailto:juan_pineda_12@hotmail.es" target="_blank"><i class="fa-regular fa-envelope"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/juancpdev/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></i></li>
+                        <li><a href="https://github.com/juancpdev" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                        <li><a href="mailto:contacto@jpdev.site" target="_blank"><i class="fa-regular fa-envelope"></i></a></li>
                     </ul>
                 </div>
                 <p class="derechos">&copy Todos los derechos reservados por Juan Cruz Pineda - <span id="year"></span></p>
