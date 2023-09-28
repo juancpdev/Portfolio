@@ -82,13 +82,10 @@ function zoomPerfil() {
     });
 }
 
-
-
-
 function verProyectos() {
     const descripciones = document.querySelectorAll('.descripcion-proyectos');
     const flechas = document.querySelectorAll('.fa-angle-down');
-    descripciones[2].style.height = descripciones[2].scrollHeight + 'px';
+    descripciones[3].style.height = descripciones[3].scrollHeight + 'px';
 
     flechas.forEach((flecha, index) => {
         flecha.addEventListener('click', function() {
