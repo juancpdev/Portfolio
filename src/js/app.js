@@ -85,7 +85,16 @@ function zoomPerfil() {
 function verProyectos() {
     const descripciones = document.querySelectorAll('.descripcion-proyectos');
     const flechas = document.querySelectorAll('.fa-angle-down');
-  
+    const titulos = document.querySelectorAll('.proyectos-titulo h5'); // Selecciona todos los títulos de los proyectos
+
+    // Abre el proyecto "App Salon" por defecto
+    titulos.forEach((titulo, index) => {
+        if(titulo.textContent.trim() === 'App Salon') {
+            descripciones[index].classList.remove('ocultar');
+            descripciones[index].style.height = descripciones[index].scrollHeight + 'px';
+            flechas[index].classList.add('giro');
+        }
+    });
 
     flechas.forEach((flecha, index) => {
         flecha.addEventListener('click', function() {
@@ -102,6 +111,7 @@ function verProyectos() {
         });
     });
 }
+
 
 function menuNav() {
     const btn = document.querySelector('.icono-menu');
