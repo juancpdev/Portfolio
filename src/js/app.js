@@ -19,7 +19,7 @@ function modos() {
     }
 
     botonDarkMode.addEventListener('click', function() {
-        document.body.style.opacity = .9;
+        document.body.style.opacity = 0.9;
         setTimeout(function() {
             document.body.classList.add('dark-mode');
             botonDarkMode.style.display = "none";
