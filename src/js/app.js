@@ -87,9 +87,9 @@ function verProyectos() {
     const flechas = document.querySelectorAll('.fa-angle-down');
     const titulos = document.querySelectorAll('.proyectos-titulo h5'); // Selecciona todos los títulos de los proyectos
 
-    // Abre el proyecto "App Salon" por defecto
+    // Abre el ultimo proyecto por defecto
     titulos.forEach((titulo, index) => {
-        if(titulo.textContent.trim() === 'App Salon') {
+        if(titulo.textContent.trim() === 'Scrivena') {
             descripciones[index].classList.remove('ocultar');
             descripciones[index].style.height = descripciones[index].scrollHeight + 'px';
             flechas[index].classList.add('giro');
