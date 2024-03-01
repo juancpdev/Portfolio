@@ -87,6 +87,14 @@ function verProyectos() {
     const flechas = document.querySelectorAll('.fa-angle-down');
     const titulos = document.querySelectorAll('.proyectos-titulo h5'); // Selecciona todos los títulos de los proyectos
 
+    function cerrarTodosLosProyectos() {
+        descripciones.forEach(descripcion => {
+            descripcion.classList.add('ocultar');
+            descripcion.style.height = '0px';
+        });
+        flechas.forEach(flecha => flecha.classList.remove('giro'));
+    }
+
     // Abre el ultimo proyecto por defecto
     titulos.forEach((titulo, index) => {
         if(titulo.textContent.trim() === 'Scrivena') {
@@ -98,19 +106,22 @@ function verProyectos() {
 
     flechas.forEach((flecha, index) => {
         flecha.addEventListener('click', function() {
-            flecha.classList.toggle('giro');
             if (descripciones[index].classList.contains('ocultar')) {
+                cerrarTodosLosProyectos(); // Cierra todos los proyectos antes de abrir el proyecto seleccionado
                 descripciones[index].classList.remove('ocultar');
                 setTimeout(() => descripciones[index].style.height = descripciones[index].scrollHeight + 'px', 0);
+                flechas[index].classList.add('giro');
             } else {
                 descripciones[index].style.height = '0px';
                 descripciones[index].addEventListener('transitionend', function() {
                     descripciones[index].classList.add('ocultar');
                 }, {once: true});
+                flechas[index].classList.remove('giro');
             }
         });
     });
 }
+
 
 
 function menuNav() {
@@ -147,7 +158,52 @@ function setupNavigation() {
     document.querySelectorAll('.contenedor-nav a').forEach(link => link.addEventListener('click', handleClick));
 }
 
+// Galeria proyectos
+let modal = document.getElementById("modal");
+let modalImg = document.getElementById("modal-image");
 
+let currentProject = "";
+let currentImageIndex = 0;
+
+function openModal(project) {
+  modal.style.display = "grid";
+  currentProject = project;
+  currentImageIndex = 0;
+  showImage(currentImageIndex);
+  showSecondaryImages();
+  document.body.classList.add('no-scroll');
+}
+
+function showSecondaryImages() {
+  let secondaryImages = document.querySelectorAll(".secondary-images");
+  secondaryImages.forEach(secundaria => {
+    secundaria.style.display = "none";
+  });
+}
+
+function closeModal() {
+  modal.style.display = "none";
+  document.body.classList.remove('no-scroll');
+}
+
+function plusSlides(n) {
+  showImage(currentImageIndex += n);
+}
+
+function showImage(n) {
+  let images = document.querySelectorAll("." + currentProject + "-image");
+  if (images.length === 0) {
+    console.error("No se encontraron imágenes asociadas al proyecto: " + currentProject);
+    return;
+  }
+  if (n >= images.length) {
+    currentImageIndex = 0; // Vuelve a la primera imagen secundaria
+  }
+  if (n < 0) {
+    currentImageIndex = images.length - 1; // Muestra la última imagen secundaria
+  }
+  modalImg.src = images[currentImageIndex].src;
+}
 
 // año copy
 const currentYear = new Date().getFullYear();
