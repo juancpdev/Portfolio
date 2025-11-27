@@ -56,12 +56,7 @@ function watchArchivos() {
     watch(paths.imagenes, versionWebp);
 }
 
-// Nueva tarea de build para producción
-function buildProduction() {
-    return parallel(css, javascript, imagenes, versionWebp)();
-}
-
 exports.css = css;
 exports.watchArchivos = watchArchivos;
-exports.build = buildProduction; // <-- NUEVA TAREA
+exports.build = parallel(css, javascript, imagenes, versionWebp); // ✅ CAMBIA ESTA LÍNEA
 exports.default = parallel(css, javascript, imagenes, versionWebp, watchArchivos);
