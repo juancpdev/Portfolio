@@ -4,7 +4,8 @@
   "description": "Proyecto ",
   "main": "gulpfile.js",
   "scripts": {
-    "dev": "gulp"
+    "dev": "gulp",
+    "build": "gulp build"
   },
   "keywords": [
     "SASS",

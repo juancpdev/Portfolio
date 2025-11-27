@@ -1,4 +1,4 @@
-const { src, dest, watch, parallel} = require("gulp");
+const { src, dest, watch, parallel, series} = require("gulp");
 const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('autoprefixer');
 const postcss = require('gulp-postcss')
@@ -32,8 +32,8 @@ function javascript() {
       .pipe(sourcemaps.init())
       .pipe(concat('bundle.js'))
       .pipe(terser())
-      .pipe(rename({ suffix: '.min' }))
       .pipe(sourcemaps.write('.'))
+      .pipe(rename({ suffix: '.min' }))
       .pipe(dest('./build/js'))
 }
 
@@ -56,12 +56,12 @@ function watchArchivos() {
     watch(paths.imagenes, versionWebp);
 }
 
-// tareas para cli
+// Nueva tarea de build para producción
+function buildProduction() {
+    return parallel(css, javascript, imagenes, versionWebp)();
+}
+
 exports.css = css;
 exports.watchArchivos = watchArchivos;
-
-// 🚀 YA NO USES WATCH PARA NETLIFY
-exports.build = parallel(css, javascript, imagenes, versionWebp);
-
-// 👇 esta sigue siendo tu tarea para desarrollo local
+exports.build = buildProduction; // <-- NUEVA TAREA
 exports.default = parallel(css, javascript, imagenes, versionWebp, watchArchivos);
