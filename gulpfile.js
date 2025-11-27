@@ -11,6 +11,7 @@ const imagemin = require('gulp-imagemin');
 const cache = require('gulp-cache');
 const clean = require('gulp-clean');
 const webp = require('gulp-webp');
+
 const paths = {
     scss: 'src/scss/**/*.scss',
     js: 'src/js/**/*.js',
@@ -22,7 +23,6 @@ function css() {
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(postcss([autoprefixer(), cssnano()]))
-        .pipe(postcss([autoprefixer()]))
         .pipe(sourcemaps.write('.'))
         .pipe(dest('build/css'));
 }
@@ -32,8 +32,8 @@ function javascript() {
       .pipe(sourcemaps.init())
       .pipe(concat('bundle.js'))
       .pipe(terser())
-      .pipe(sourcemaps.write('.'))
       .pipe(rename({ suffix: '.min' }))
+      .pipe(sourcemaps.write('.'))
       .pipe(dest('./build/js'))
 }
 
@@ -49,7 +49,6 @@ function versionWebp() {
         .pipe(dest('build/img'))
 }
 
-
 function watchArchivos() {
     watch(paths.scss, css);
     watch(paths.js, javascript);
@@ -57,6 +56,12 @@ function watchArchivos() {
     watch(paths.imagenes, versionWebp);
 }
 
+// tareas para cli
 exports.css = css;
 exports.watchArchivos = watchArchivos;
-exports.default = parallel(css, javascript, imagenes, versionWebp, watchArchivos); 
+
+// 🚀 YA NO USES WATCH PARA NETLIFY
+exports.build = parallel(css, javascript, imagenes, versionWebp);
+
+// 👇 esta sigue siendo tu tarea para desarrollo local
+exports.default = parallel(css, javascript, imagenes, versionWebp, watchArchivos);
