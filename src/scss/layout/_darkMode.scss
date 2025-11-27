@@ -189,31 +189,179 @@
     }
 
     // RECURSOS
-    .section-recursos { 
-        background-color: $dark2;
-        .contenedor-titulo {
-            p {
-                color: rgb(184, 181, 181);
-            }
-        }
-        h4 {
-            color: $rosa2;
-            &::after {
-                background-color: $rosa2;
-            }
-        }
-        .recursos {
-            a {
-                color: darken($rosa2, 40) !important;
-                &:hover {
-                    text-shadow: darken($rosa2, 50) 2px 2px 5px !important;
-                }
-            }
-            .subtitulos {
-                color: rgb(150, 150, 150);
-            }
-        }
+      .section-tech-stack {
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+    background-color: darken(#121212, 3); // Fondo oscuro
+
+    .contenedor {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
+
+    .contenedor-titulo {
+      text-align: center;
+      margin-bottom: 60px;
+
+      h2 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        background: linear-gradient(135deg, #E84A8A 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      p {
+        font-size: 1.1rem;
+        color: rgb(184, 181, 181); // texto más suave para dark
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    }
+
+    .tabs-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 12px 28px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(232, 74, 138, 0.5);
+      border-radius: 25px;
+      color: rgb(184, 181, 181);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+      font-weight: 500;
+
+      &:hover {
+        background: rgba(232, 74, 138, 0.2);
+        border-color: #E84A8A;
+        color: #fff;
+        transform: translateY(-2px);
+      }
+
+      &.active {
+        background: linear-gradient(135deg, #E84A8A 0%, #764ba2 100%);
+        border-color: transparent;
+        color: #fff;
+      }
+    }
+
+    .content-grid {
+      display: none;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      animation: fadeIn 0.5s ease;
+
+      &.active {
+        display: grid;
+      }
+    }
+
+    .tool-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(232, 74, 138, 0.2);
+      border-radius: 16px;
+      padding: 28px;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #E84A8A 0%, #764ba2 100%);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover {
+        background: rgba(232, 74, 138, 0.1);
+        border-color: rgba(232, 74, 138, 0.3);
+        transform: translateY(-5px);
+      }
+
+      &:hover::before {
+        transform: scaleX(1);
+      }
+
+      .tool-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+
+        .tool-icon {
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(135deg, rgba(232, 74, 138, 0.2), rgba(118, 75, 162, 0.2));
+          border-radius: 12px;
+          font-size: 1.5rem;
+        }
+      }
+
+      .tool-info {
+        h3 {
+          font-size: 1.2rem;
+          margin-bottom: 3px;
+          color: #fff;
+        }
+      }
+
+      .tool-tag {
+        font-size: 1rem;
+        color: #E84A8A;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .tool-description {
+        color: rgb(184, 181, 181);
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      .tool-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #E84A8A;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+
+        &:hover {
+          gap: 12px;
+          color: #764ba2;
+        }
+
+        i {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
 
     // FLECHA 
     .flecha {

@@ -1,74 +1,202 @@
-.section-recursos {
-    padding: 8rem 0;
-    background-color: darken($blanco, 5);
-    scroll-margin-top: 6rem;
-    @include tabletXL {
-        scroll-margin-top: 8rem;
-    }
-    .contenedor-titulo {
-        padding-bottom: 3rem;
-        h2 {
-            font-weight: 800;
-            line-height: 1;
-            margin: 1rem 0;
-            font-size: 4rem;
-            @include telefono {
-                font-size: 5rem;
-            }
+        .section-tech-stack {
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
         }
-        p {
-            color: $secundario;
-            font-size: 1.1rem;
+        
+        /* Clase para mantener tu fondo original del portfolio */
+        .bg-custom {
+            background: var(--bg-custom, #f5f5f5);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.5; }
+        }
+
+        .contenedor {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contenedor-titulo {
             text-align: center;
-            margin-bottom: 3rem;
-            @include telefono {
-                font-size: 1.3rem;
-            }
-        }
-    }
-    h4 {
-        font-weight: 900;
-        font-size: 2rem;
-        color: $secundario;
-        @include telefono {
-            font-size: 2.5rem;
-        }
-        &::after {
-            content:'';
-            display: block;
-            width: 6rem;
-            height: .2rem;
-            background-color: $secundario; 
-        }
-    }
-
-    .contenedor-recursos {
-        @include grid (1, 5rem);
-        @include tablet {
-            @include grid (2, 8rem);
+            margin-bottom: 60px;
         }
 
-        .recursos {
-            margin: 0 1rem;
-            @include tablet {
-                margin: 0;
+        .contenedor-titulo h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contenedor-titulo p {
+            font-size: 1.1rem;
+            color: #a0a0a0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .tabs-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 12px 28px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            color: #a0a0a0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .tab-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(102, 126, 234, 0.5);
+            color: #000000;
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: transparent;
+            color: #fff;
+        }
+
+        .content-grid {
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-grid.active {
+            display: grid;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tool-card {
+            background: rgb(255, 255, 255);
+            border: 2px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .tool-card:hover {
+            background: rgb(255, 255, 255);
+            border-color: rgba(102, 126, 234, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .tool-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .tool-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .tool-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+            border-radius: 12px;
+            font-size: 1.5rem;
+        }
+
+        .tool-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 3px;
+            color: #000000;
+            font-weight: 600;
+            text-align: start;
+        }
+
+        .tool-tag {
+            font-size: 1rem;
+            color: #667eea;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .tool-description {
+            color: #a0a0a0;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .tool-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .tool-link:hover {
+            gap: 12px;
+            color: #764ba2;
+        }
+
+        .tool-link i {
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .contenedor-titulo h2 {
+                font-size: 2rem;
             }
-            .titulo {
-                color: darken($principal, 15);
-                font-size: 1.8rem;
-                font-weight: 700;
-                &:hover {
-                    color: darken($principal, 20);
-                    text-shadow: 2px 2px 5px rgb(187, 187, 187);
-                }
+
+            .section-tech-stack {
+                padding: 60px 20px;
             }
-            .subtitulos {
-                font-size: 1.1rem;
-                color: $secundario;
-            }
-            .fa-link {
-                opacity: .5;
+
+            .content-grid {
+                grid-template-columns: 1fr;
             }
         }
-    }
-}
