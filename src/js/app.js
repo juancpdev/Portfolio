@@ -1,3 +1,11 @@
+// ============================================
+// CÓDIGO JAVASCRIPT COMPLETO - VERSIÓN CORREGIDA
+// ============================================
+
+// ✅ Variables globales al inicio
+let currentProject = "";
+let currentImageIndex = 0;
+
 document.addEventListener('DOMContentLoaded', function() {
     modos();
     zoomPerfil();
@@ -5,7 +13,18 @@ document.addEventListener('DOMContentLoaded', function() {
     verProyectos();
     menuNav();
     setupNavigation();
+    
+    // ✅ SOLUCIÓN: Mover el modal al final del body
+    moverModalAlBody();
 });
+
+function moverModalAlBody() {
+    const modal = document.getElementById('modal');
+    if (modal) {
+        // Mueve el modal al final del body para que escape de cualquier contexto de apilamiento
+        document.body.appendChild(modal);
+    }
+}
 
 function modos() {
     const botonDarkMode = document.querySelector('.icono-luna');
@@ -25,7 +44,6 @@ function modos() {
             botonDarkMode.style.display = "none";
             botonDayMode.style.display = "block";
             document.body.style.opacity = 1;
-            // Guarda el estado del modo oscuro en el almacenamiento local
             localStorage.setItem('darkMode', 'true');
         }, 200);
     });
@@ -37,13 +55,10 @@ function modos() {
             botonDayMode.style.display = "none";
             botonDarkMode.style.display = "block";
             document.body.style.opacity = 1;
-            // Guarda el estado del modo oscuro en el almacenamiento local
             localStorage.setItem('darkMode', 'false');
         }, 200);
     });
 }
-
-
 
 function subirFlecha() {
     const flecha = document.querySelector('.flecha');
@@ -60,11 +75,10 @@ function zoomPerfil() {
     const equis = document.querySelector('.equis');
     const perfil = document.querySelector('.perfil-contenedor');
     const perfilFijado = document.querySelector('.fijado-contenedor');
-    const perfilFijado2 = document.querySelector('.perfil-fijado2');  // Agrega esta línea
+    const perfilFijado2 = document.querySelector('.perfil-fijado2');
 
     perfil.addEventListener('click', function() {
         perfilFijado.style.display = "block";
-        // Cambia la opacidad y la escala de perfilFijado2
         setTimeout(() => {
             perfilFijado2.style.opacity = "1";
             perfilFijado2.style.transform = "scale(1)";
@@ -73,11 +87,9 @@ function zoomPerfil() {
     });
 
     equis.addEventListener('click', function() {
-        // Cambia la opacidad y la escala de perfilFijado2
         perfilFijado2.style.opacity = "0";
         perfilFijado2.style.transform = "scale(0)";
-        // Después de que la transición se haya completado, entonces cambia display a "none" en perfilFijado
-        setTimeout(() => perfilFijado.style.display = "none", 300);  // Ajusta el tiempo de demora según la duración de tu transición
+        setTimeout(() => perfilFijado.style.display = "none", 300);
         document.body.classList.remove('no-scroll');
     });
 }
@@ -85,7 +97,7 @@ function zoomPerfil() {
 function verProyectos() {
     const descripciones = document.querySelectorAll('.descripcion-proyectos');
     const flechas = document.querySelectorAll('.fa-angle-down');
-    const titulos = document.querySelectorAll('.proyectos-titulo h5'); // Selecciona todos los títulos de los proyectos
+    const titulos = document.querySelectorAll('.proyectos-titulo h5');
 
     function cerrarTodosLosProyectos() {
         descripciones.forEach(descripcion => {
@@ -95,7 +107,7 @@ function verProyectos() {
         flechas.forEach(flecha => flecha.classList.remove('giro'));
     }
 
-    // Abre el ultimo proyecto por defecto
+    // Abre el ultimo proyecto por defecto (Scrivena)
     titulos.forEach((titulo, index) => {
         if(titulo.textContent.trim() === 'Scrivena') {
             descripciones[index].classList.remove('ocultar');
@@ -107,7 +119,7 @@ function verProyectos() {
     flechas.forEach((flecha, index) => {
         flecha.addEventListener('click', function() {
             if (descripciones[index].classList.contains('ocultar')) {
-                cerrarTodosLosProyectos(); // Cierra todos los proyectos antes de abrir el proyecto seleccionado
+                cerrarTodosLosProyectos();
                 descripciones[index].classList.remove('ocultar');
                 setTimeout(() => descripciones[index].style.height = descripciones[index].scrollHeight + 'px', 0);
                 flechas[index].classList.add('giro');
@@ -121,8 +133,6 @@ function verProyectos() {
         });
     });
 }
-
-
 
 function menuNav() {
     const btn = document.querySelector('.icono-menu');
@@ -141,11 +151,9 @@ function menuNav() {
 }
 
 function setupNavigation() {
-    // Manejador de eventos de clic común
     function handleClick(event) {
         event.preventDefault();
         const href = this.getAttribute('href');
-        // Comprueba si el href es "#" (logo o flecha) o un ID de fragmento (navegación)
         if (href === '/') {
             window.scrollTo(0, 0);
         } else {
@@ -153,58 +161,58 @@ function setupNavigation() {
         }
     }
 
-    // Agrega el manejador de eventos de clic a los enlaces de navegación, al logo y a la flecha
     document.querySelector('.flecha').addEventListener('click', handleClick);
     document.querySelectorAll('.contenedor-nav a').forEach(link => link.addEventListener('click', handleClick));
 }
 
-// Galeria proyectos
-let modal = document.getElementById("modal");
-let modalImg = document.getElementById("modal-image");
-
-let currentProject = "";
-let currentImageIndex = 0;
-
+// ✅ FUNCIONES DEL MODAL - CORREGIDAS
 function openModal(project) {
-  modal.style.display = "grid";
-  currentProject = project;
-  currentImageIndex = 0;
-  showImage(currentImageIndex);
-  showSecondaryImages();
-  document.body.classList.add('no-scroll');
+    const modal = document.getElementById("modal");
+    modal.style.display = "grid";
+    modal.style.zIndex = "9999"; // ✅ Asegura z-index alto
+    currentProject = project;
+    currentImageIndex = 0;
+    showImage(currentImageIndex);
+    showSecondaryImages();
+    document.body.classList.add('no-scroll');
 }
 
 function showSecondaryImages() {
-  let secondaryImages = document.querySelectorAll(".secondary-images");
-  secondaryImages.forEach(secundaria => {
-    secundaria.style.display = "none";
-  });
+    let secondaryImages = document.querySelectorAll(".secondary-images");
+    secondaryImages.forEach(secundaria => {
+        secundaria.style.display = "none";
+    });
 }
 
 function closeModal() {
-  modal.style.display = "none";
-  document.body.classList.remove('no-scroll');
+    const modal = document.getElementById("modal");
+    modal.style.display = "none";
+    document.body.classList.remove('no-scroll');
 }
 
 function plusSlides(n) {
-  showImage(currentImageIndex += n);
+    showImage(currentImageIndex += n);
 }
 
 function showImage(n) {
-  let images = document.querySelectorAll("." + currentProject + "-image");
-  if (images.length === 0) {
-    console.error("No se encontraron imágenes asociadas al proyecto: " + currentProject);
-    return;
-  }
-  if (n >= images.length) {
-    currentImageIndex = 0; // Vuelve a la primera imagen secundaria
-  }
-  if (n < 0) {
-    currentImageIndex = images.length - 1; // Muestra la última imagen secundaria
-  }
-  modalImg.src = images[currentImageIndex].src;
+    const modalImg = document.getElementById("modal-image");
+    let images = document.querySelectorAll("." + currentProject + "-image");
+    
+    if (images.length === 0) {
+        console.error("No se encontraron imágenes asociadas al proyecto: " + currentProject);
+        return;
+    }
+    
+    if (n >= images.length) {
+        currentImageIndex = 0;
+    }
+    if (n < 0) {
+        currentImageIndex = images.length - 1;
+    }
+    
+    modalImg.src = images[currentImageIndex].src;
 }
 
-// año copy
+// Año en el footer
 const currentYear = new Date().getFullYear();
 document.getElementById('year').textContent = currentYear;
